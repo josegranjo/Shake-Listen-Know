@@ -1,0 +1,60 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;; -*- Mode: Fundamental -*- ;;;;;;;;;;;;;;;;;;;;;;;;;
+;; README --- Description of ClaPD
+;; Authors         : Leevi Peltola and Cumhur.Erkut@tkk.fi
+;; Created On      : Thu Mar 16 22:49:41 2006
+;; Last Modified By: Cumhur.Erkut@erase.hut.fi
+;; Last Modified On: Fri Mar 17 12:10:53 2006
+;; Update Count    : 83
+;; Status          : $Id: README,v 1.2 2006/03/17 11:59:07 cerkut Exp $
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+ClaPD consists of pd patches, abstractions, and externals for hands clapping
+synthesis and control. 
+
+MAIN CONTROL PATCHES 
+One of the main patches loads the required abstractions and externals:
+
+01_SoloClapper.pd    : control model for one clapper and one clap
+02_Ensemble_GUI.pd   : synch/asynch audience (band visualization)
+03 Ensemble_NOGUI.pd : synch/asynch audience (audio only)
+
+ABSTRACTIONS
+
+clapper.pd    - provides PhaseDiff to a cosc object
+humanrand.pd  - models the randomness when a human is clapping hands
+oneclap.pd    - synthesis model for the sound of a hand clap
+oneclapper.pd - control model for one clapper
+trirand.pd    - random number with triangular distribution
+
+EXTERNALS (.c|.dll|.pd_linux)
+
+cosc      - individual clapper control model that listens to the lead osc
+freeverb~ - Shroeder-Moorer reverb algorithm implemented by O. Matthes
+noiseq~   - noise excitation generator used in the synthesis of one clap
+ppl       - controls the number of clappers
+reson~ 	 - resonator used in the synthesis of one clap
+twopz~ 	 - two-pole two-zero band-pass (excitation filtering)
+
+COMPILING
+
+1. Ensure that compiler, include, and library paths are correct.
+
+2. Do (one of)
+
+	make pd_linux | pd_nt | pd_irix5 | pd_irix6 | pd_darwin
+
+3. ClaPD requires freeverb~ (tested with freeverb~V1.1). If you don't have
+   freeverb~ in your externals directory (or in your PATH), go to
+   $(CLAPD_ROOT)/freeverb~ directory and do (one of)
+
+	make pd_linux | pd_nt | pd_darwin
+
+	The makefile will link the external to ../$(CLAPD_ROOT)
+	directory. $(CLAPD_ROOT) indicates where ClaPD is installed (not a
+	variable).
+
+INSTALLATION AND LOADING
+
+1. Run pd and load one of the main control patches. 
+
+2. Alternatively, add $(CLAPD_ROOT) to File/Path... within PD.

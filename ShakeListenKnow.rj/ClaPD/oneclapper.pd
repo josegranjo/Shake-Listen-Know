@@ -1,0 +1,104 @@
+#N canvas 103 114 671 567 12;
+#X obj 485 256 s P1;
+#X obj 533 256 s P2;
+#X obj 578 256 s P3;
+#X obj 485 239 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 578 239 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 533 238 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 485 277 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 578 277 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 533 277 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 485 294 s A1;
+#X obj 533 294 s A2;
+#X obj 578 294 s A3;
+#X obj 485 315 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 535 315 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 485 332 s A1+;
+#X obj 535 332 s A1-;
+#X obj 361 72 vsl 15 80 240 400 0 1 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X text 376 60 -Bored;
+#X text 375 144 -Enthusiastic;
+#X text 375 101 -Natural;
+#X floatatom 285 152 5 0 0 0 - - -;
+#X floatatom 361 194 5 0 0 0 - - -;
+#X floatatom 279 331 5 0 0 0 - - -;
+#X obj 188 292 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 188 355 pipe 300;
+#X obj 224 405 s feedback;
+#X obj 188 271 r feedback;
+#X text 7 123 length;
+#X text 7 141 of the;
+#X text 7 159 sequence;
+#X obj 91 131 vsl 15 77 1000 30000 0 1 empty empty empty 0 -8 0 8 -262144
+-1 -1 4600 1;
+#X text 70 199 1s;
+#X text 65 128 30s;
+#X obj 207 114 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 91 292 clear;
+#X obj 91 271 delay;
+#X obj 361 157 / 10;
+#X obj 68 33 inlet;
+#X obj 180 33 inlet;
+#X obj 361 33 inlet;
+#X text 68 14 Start seq.;
+#X text 180 14 Length;
+#X text 361 14 Mood;
+#X obj 207 93 delay;
+#X obj 242 70 random;
+#X obj 279 310 humanrand;
+#X obj 188 446 outlet;
+#X obj 544 33 inlet;
+#X text 544 14 Disturb;
+#X text 498 222 Change mode:;
+#X text 7 489 ----------------------------------------;
+#X text 7 539 ----------------------------------------;
+#X text 6 501 ClaPD $Revision: 1.2 $;
+#X text 6 516 L. Peltola and C. Erkut;
+#X text 6 530 TKK \, Acoustics LAB.;
+#X connect 3 0 0 0;
+#X connect 4 0 2 0;
+#X connect 5 0 1 0;
+#X connect 6 0 9 0;
+#X connect 7 0 11 0;
+#X connect 8 0 10 0;
+#X connect 12 0 14 0;
+#X connect 13 0 15 0;
+#X connect 16 0 20 0;
+#X connect 16 0 36 0;
+#X connect 20 0 44 1;
+#X connect 20 0 45 3;
+#X connect 21 0 45 5;
+#X connect 22 0 24 1;
+#X connect 23 0 24 0;
+#X connect 23 0 45 0;
+#X connect 24 0 25 0;
+#X connect 24 0 46 0;
+#X connect 26 0 23 0;
+#X connect 30 0 35 0;
+#X connect 30 0 45 2;
+#X connect 33 0 30 0;
+#X connect 33 0 24 0;
+#X connect 33 0 35 0;
+#X connect 33 0 45 1;
+#X connect 34 0 24 0;
+#X connect 35 0 34 0;
+#X connect 36 0 21 0;
+#X connect 37 0 44 0;
+#X connect 37 0 43 0;
+#X connect 38 0 30 0;
+#X connect 39 0 16 0;
+#X connect 43 0 33 0;
+#X connect 44 0 43 1;
+#X connect 45 0 22 0;
+#X connect 47 0 45 4;

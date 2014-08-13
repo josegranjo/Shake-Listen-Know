@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <TextView android:text="TextView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/textViewBanner"></TextView>
+<TextView android:text="TextView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/textViewIP"></TextView>
+<EditText android:layout_height="wrap_content" android:id="@+id/editTextIPAddress" android:layout_width="270dp">
+    <requestFocus></requestFocus>
+</EditText>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/linearLayout1">
+    <Button android:layout_width="110dp" android:text="Start" android:layout_height="wrap_content" android:id="@+id/buttonStart"></Button>
+    <Button android:id="@+id/buttonStop" android:layout_width="110dp" android:text="Stop" android:layout_height="wrap_content"></Button>
+</LinearLayout>
+</LinearLayout>
